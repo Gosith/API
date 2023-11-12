@@ -1,11 +1,14 @@
-# GET http://localhost:3000/subscribers
+
+GET http://localhost:3000/subscribers/
 
 
-POST http://localhost:3000/subscribers
-Content-Type: application/json
+# GET http://localhost:3000/subscribers/65502acee751023cce5c06c1
+# Content-Type: application/json
 
-{
-    "name":"john",
-    "subscribedtochannel":"Web dev simplified"
+# {
+#     "name":"john",
+#     "subscribedtochannel":"Web dv simplified"
 
-}
+# }
+###
+DELETE http://localhost:3000/subscribers/
