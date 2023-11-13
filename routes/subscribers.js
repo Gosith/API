@@ -40,6 +40,25 @@ router.get('/:id', getsubscriber,   (req, res)=>{
     res.json(res.subscriber);
 })
 
+router.patch('/:id',getsubscriber,async(req,res)=>{
+    if(req.body.name!=null){
+        res.subscriber.name = req.body.name
+    }else{
+
+    }
+
+    if(req.body.subscribedtochannel!=null){
+        res.subscriber.subscribedtochannel = req.body.subscribedtochannel
+    }
+
+    try {
+        const updatedsub = await res.subscriber.save()
+        res.json(updatedsub)
+    } catch (error) {
+        res.status(400).json({message:error.message})
+    }
+})
+
 async function getsubscriber(req, res, next) {
     let subscriber
     try {

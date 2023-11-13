@@ -8,7 +8,6 @@ mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true});
 const db = mongoose.connection
 db.on('error',(error)=>console.log(error))
 db.once('open',()=>console.log('connected to db'))
-db.on('error',(error)=>console.log(error))
 
 app.use(express.json());
 
